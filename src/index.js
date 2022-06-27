@@ -10,11 +10,15 @@ const app = express();
 
 conectarDB();
 
+const whitList = [
+    'https://api-pokedex-frontend.herokuapp.com',
+]
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(logger('dev'));
-app.use(cors());
+app.use(cors({origin: whitList}));
 app.use(helment());
 
 app.use('/api', usuarioRoutes);
