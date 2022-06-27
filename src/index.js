@@ -12,6 +12,7 @@ conectarDB();
 
 const whitList = [
     'https://api-pokedex-frontend.herokuapp.com',
+    'http://localhost:4200'
 ]
 
 app.use(express.json());
